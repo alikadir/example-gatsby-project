@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Layout from '../components/layout';
 import Image from '../components/image';
@@ -16,7 +16,13 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-    <Link to="/sample/">Go to My Awesome Sample Page</Link>
+    <Link to="/sample" state={{ key1: 'value1' }}>
+      Go to My Awesome Sample Page
+    </Link>
+    <br />
+    <button onClick={e => navigate('/sample', { state: { key1: 'value1' } })}>
+      Go to My Awesome Sample Page
+    </button>
   </Layout>
 );
 

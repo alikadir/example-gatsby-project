@@ -19,6 +19,9 @@ const Sample = props => {
         decrease count
       </button>
       <h2>{count}</h2>
+      <p>
+        <h4>incoming state</h4> {JSON.stringify(props.location.state)}
+      </p>
     </Layout>
   );
 };
